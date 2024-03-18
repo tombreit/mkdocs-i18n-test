@@ -1,5 +1,7 @@
 site_name: MkDocs i18n Test
 strict: true
+site_url: https://tombreit.github.io/mkdocs-i18n-test
+repo_url: https://github.com/tombreit/mkdocs-i18n-test
 plugins:
   - i18n:
       docs_structure: suffix
