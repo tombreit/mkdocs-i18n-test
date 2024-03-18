@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://tombreit.github.io/mkdocs-i18n-test/enonly/</loc>
+        <lastmod>2024-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tombreit.github.io/mkdocs-i18n-test/enonly/"/>
+    </url>
+    <url>
+        <loc>https://tombreit.github.io/mkdocs-i18n-test/</loc>
+        <lastmod>2024-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tombreit.github.io/mkdocs-i18n-test/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://tombreit.github.io/mkdocs-i18n-test/de/"/>
+    </url>
+    <url>
+        <loc>https://tombreit.github.io/mkdocs-i18n-test/second_page/</loc>
+        <lastmod>2024-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tombreit.github.io/mkdocs-i18n-test/second_page/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://tombreit.github.io/mkdocs-i18n-test/de/second_page/"/>
+    </url>
+    <url>
+        <loc>https://tombreit.github.io/mkdocs-i18n-test/de/deonly/</loc>
+        <lastmod>2024-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://tombreit.github.io/mkdocs-i18n-test/de/deonly/"/>
+    </url>
+    <url>
+        <loc>https://tombreit.github.io/mkdocs-i18n-test/de/</loc>
+        <lastmod>2024-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://tombreit.github.io/mkdocs-i18n-test/de/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tombreit.github.io/mkdocs-i18n-test/"/>
+    </url>
+    <url>
+        <loc>https://tombreit.github.io/mkdocs-i18n-test/de/second_page/</loc>
+        <lastmod>2024-03-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://tombreit.github.io/mkdocs-i18n-test/de/second_page/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tombreit.github.io/mkdocs-i18n-test/second_page/"/>
+    </url>
+</urlset>

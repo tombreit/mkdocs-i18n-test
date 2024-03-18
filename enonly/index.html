@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>EN only page - MkDocs i18n Test</title>
+  <link rel="shortcut icon" href="../img/favicon.ico">
+</head>
+
+<body>
+
+
+<i>
+Playground for <a href="https://github.com/ultrabug/mkdocs-static-i18n/issues/297">https://github.com/ultrabug/mkdocs-static-i18n/issues/297</a>
+<br>
+<br>
+Repo: <a href="https://github.com/tombreit/mkdocs-i18n-test">https://github.com/tombreit/mkdocs-i18n-test</a>
+</i>
+
+<hr>
+
+<h1>
+  EN only page
+</h1>
+
+<h2>
+  Navigation
+</h2>
+<strong>
+  Languages
+</strong>
+<ul>
+  <li><a href="../">EN</a></li>
+  <li><a href="../de/">DE</a></li>
+</ul>
+
+<strong>
+  Pages
+</strong>
+<ul>
+
+  
+<li class="active">
+    <a href="./">EN only page</a>
+</li>
+
+
+  
+<li >
+    <a href="..">Home</a>
+</li>
+
+
+  
+<li >
+    <a href="../second_page/">Second page</a>
+</li>
+
+
+</ul>
+
+<hr>
+
+<h2>
+  Template context variables
+</h2>
+
+Ref: <a href="https://github.com/ultrabug/mkdocs-static-i18n/blob/main/mkdocs_static_i18n/plugin.py#L135">
+  https://github.com/ultrabug/mkdocs-static-i18n/blob/main/mkdocs_static_i18n/plugin.py#L135
+</a>
+
+<pre>
+i18n_build_languages: ['en', 'de']
+i18n_current_language_config: {'build': True, 'copyright': None, 'default': True, 'extra': None, 'fixed_link': None, 'link': '/', 'locale': 'en', 'name': 'English', 'nav': None, 'nav_translations': None, 'admonition_translations': None, 'site_author': None, 'site_description': None, 'site_name': None, 'site_url': None, 'theme': None}
+i18n_current_language: en
+i18n_alternates: 
+</pre>
+
+<h2>
+  Page context variables
+</h2>
+
+Ref: <a href="https://github.com/ultrabug/mkdocs-static-i18n/blob/main/mkdocs_static_i18n/plugin.py#L175">
+  https://github.com/ultrabug/mkdocs-static-i18n/blob/main/mkdocs_static_i18n/plugin.py#L175
+</a>
+
+<pre>
+i18n_config: {'build_only_locale': None, 'docs_structure': 'suffix', 'fallback_to_default': False, 'reconfigure_material': True, 'reconfigure_search': True, 'languages': [{'build': True, 'copyright': None, 'default': True, 'extra': None, 'fixed_link': None, 'link': '/', 'locale': 'en', 'name': 'English', 'nav': None, 'nav_translations': None, 'admonition_translations': None, 'site_author': None, 'site_description': None, 'site_name': None, 'site_url': None, 'theme': None}, {'build': True, 'copyright': None, 'default': False, 'extra': None, 'fixed_link': None, 'link': '/de/', 'locale': 'de', 'name': 'Deutsch', 'nav': None, 'nav_translations': None, 'admonition_translations': None, 'site_author': None, 'site_description': None, 'site_name': None, 'site_url': None, 'theme': None}]}
+i18n_file_locale: en
+i18n_page_locale: en
+</pre>
+
+<h2>
+  all_languages
+</h2>
+
+<pre>
+config.plugins["i18n"].all_languages: ['en', 'de']
+</pre>
+
+<h2>
+  build_languages
+</h2>
+
+<pre>
+i18n_page_locale: en
+
+- build_languages lang: en
+- build_languages lang: de
+
+</pre>
+
+
+<h2>
+  i18n_files_per_language
+</h2>
+
+<strong>Code</strong>
+<pre>
+{&percnt;- for locale, i18n_files in config.plugins["i18n"].i18n_files_per_language.items() &percnt;}
+- locale:     &lcub;&lcub; locale }}
+  i18n_files: &lcub;&lcub; i18n_files }}
+{&percnt; endfor &percnt;}
+</pre>
+
+<strong>Output</strong>
+<pre>
+- locale:     en
+  i18n_files: [File(src_uri='enonly.en.md', dest_uri='enonly/index.html', name='enonly', url='enonly/'), File(src_uri='index.en.md', dest_uri='index.html', name='index', url='./'), File(src_uri='second_page.en.md', dest_uri='second_page/index.html', name='second_page', url='second_page/')]
+
+</pre>
+
+<hr>
+<p>
+  <strong>
+    Page content: 
+  </strong>
+</p>
+<h1 id="en-only-page">EN only page</h1>
+<p>This page is only available in English.</p>
+
+
+<!--
+MkDocs version      : 1.5.3
+Docs Build Date UTC : 2024-03-18 23:00:57.443962+00:00
+Edit URL:             https://github.com/tombreit/mkdocs-i18n-test/edit/master/docs/enonly.en.md
+
+-->
+
+</body>
+</html>
