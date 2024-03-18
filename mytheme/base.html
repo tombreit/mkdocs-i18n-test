@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+  <link rel="shortcut icon" href="{{ "img/favicon.ico"|url }}">
+</head>
+
+<body>
+
+<h1>
+  {{ page.title }}
+</h1>
+
+<h2>
+  Navigation
+</h2>
+<strong>
+  Languages
+</strong>
+<ul>
+  <li><a href="/">EN</a></li>
+  <li><a href="/de/">DE</a></li>
+</ul>
+
+<strong>
+  Pages
+</strong>
+<ul>
+{% for nav_item in nav %}
+  {% include "nav.html" %}
+{% endfor %}
+</ul>
+
+<hr>
+
+<h2>
+  Template context variables
+</h2>
+
+Ref: <a href="https://github.com/ultrabug/mkdocs-static-i18n/blob/main/mkdocs_static_i18n/plugin.py#L135">
+  https://github.com/ultrabug/mkdocs-static-i18n/blob/main/mkdocs_static_i18n/plugin.py#L135
+</a>
+
+<pre>
+i18n_build_languages: {{ i18n_build_languages }}
+i18n_current_language_config: {{ i18n_current_language_config }}
+i18n_current_language: {{ i18n_current_language }}
+i18n_alternates: {{ i18n_alternates }}
+</pre>
+
+
+<h2>
+  Page context variables
+</h2>
+
+Ref: <a href="https://github.com/ultrabug/mkdocs-static-i18n/blob/main/mkdocs_static_i18n/plugin.py#L175">
+  https://github.com/ultrabug/mkdocs-static-i18n/blob/main/mkdocs_static_i18n/plugin.py#L175
+</a>
+
+<pre>
+i18n_config: {{ i18n_config }}
+i18n_file_locale: {{ i18n_file_locale }}
+i18n_page_locale: {{ i18n_page_locale }}
+</pre>
+
+<h2>
+  all_languages
+</h2>
+
+<pre>
+config.plugins["i18n"].all_languages: {{ config.plugins["i18n"].all_languages }}
+</pre>
+
+
+<h2>
+  i18n_files_per_language
+</h2>
+
+<strong>Code</strong>
+<pre>
+{&percnt;- for locale, i18n_files in config.plugins["i18n"].i18n_files_per_language.items() &percnt;}
+- locale:     &lcub;&lcub; locale }}
+  i18n_files: &lcub;&lcub; i18n_files }}
+{&percnt; endfor &percnt;}
+</pre>
+
+<strong>Output</strong>
+<pre>
+{%- for locale, i18n_files in config.plugins["i18n"].i18n_files_per_language.items() %}
+- locale:     {{ locale }}
+  i18n_files: {{ i18n_files }}
+{% endfor %}
+</pre>
+
+<hr>
+<p>
+  <strong>
+    Page content: 
+  </strong>
+</p>
+{{ page.content }}
+
+
+<!--
+MkDocs version      : {{ mkdocs_version }}
+Docs Build Date UTC : {{ build_date_utc }}
+{% if page and page.edit_url -%}
+Edit URL:             {{ page.edit_url }}
+{% elif config.repo_url -%}
+Repo URL:              {{ config.repo_url }}
+{% endif %}
+-->
+
+</body>
+</html>

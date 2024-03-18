@@ -1,0 +1,15 @@
+site_name: MkDocs i18n Test
+strict: true
+plugins:
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: false
+      languages:
+        - locale: en
+          default: true
+          name: English
+        - locale: de
+          name: Deutsch
+theme:
+  name: null
+  custom_dir: 'mytheme/'
