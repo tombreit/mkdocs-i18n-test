@@ -52,12 +52,11 @@ Ref: <a href="https://github.com/ultrabug/mkdocs-static-i18n/blob/main/mkdocs_st
 </a>
 
 <pre>
-i18n_build_languages: {{ i18n_build_languages }}
-i18n_current_language_config: {{ i18n_current_language_config }}
-i18n_current_language: {{ i18n_current_language }}
-i18n_alternates: {{ i18n_alternates }}
+i18n_build_languages: {{ config.plugins["i18n"].build_languages }}
+i18n_current_language_config: {{ config.plugins["i18n"].current_language_config }}
+i18n_current_language: {{ config.plugins["i18n"].current_language }}
+i18n_alternates: {{ config.plugins["i18n"].alternates }}
 </pre>
-
 
 <h2>
   Page context variables
@@ -79,6 +78,18 @@ i18n_page_locale: {{ i18n_page_locale }}
 
 <pre>
 config.plugins["i18n"].all_languages: {{ config.plugins["i18n"].all_languages }}
+</pre>
+
+<h2>
+  build_languages
+</h2>
+
+<pre>
+i18n_page_locale: {{ i18n_page_locale }}
+
+{% for lang in config.plugins["i18n"].build_languages -%}
+- build_languages lang: {{ lang }}
+{% endfor %}
 </pre>
 
 
